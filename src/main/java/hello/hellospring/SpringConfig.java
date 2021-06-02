@@ -1,5 +1,6 @@
 package hello.hellospring;
 
+import hello.hellospring.aop.TimeTraceAop;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,11 @@ public class SpringConfig {
         return new MemberService(memberRepository);
     }
 
+    /* 컴포넌트 스캔을 사용해도 되지만 특별하다는 것을 의미해주기 위해 빈으로 등록해서 사용하는게 좋다.
+    @Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
+    }
+    */
 
 }
